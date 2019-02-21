@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+<style>
+.form-container
+{
+   height: 400px;
+   width: 400px;
+   margin-top: 100px;
+   background: pink;
+   border-radius: 5px;
+   box-shadow: 4px 2px 2px;
+}
+input
+{
+   height: 40px;
+   width: 300px;
+   margin-top: 40px;
+   border: 1px solid;
+}
+.submitButton
+{
+   height: 40px;
+   width: 80px;
+   background: Aqua;
+   color: black;
+}
+span
+{
+   font-size: 40px;
+}
+</style>
+<script>
+    function validationForm() {
+    	var x = document.getElementById("uname");
+    	var y = document.getElementById("passwd");
+    	var z = document.forms["loginform"];
+    	if(x.value == "") {
+    		if(y.value == ""){
+    			alert("All fields are empty!");
+    			return false;
+    		}
+    		else{
+    		   alert("Username is empty!");
+    		   return false;
+    		}
+    	}
+    	else if(y.value == ""){
+    		alert("Password not entered!");
+    		return false;
+    	}
+    	else 
+    		{
+    		    z.action="./Login";
+    		}
+    }
+</script>
+</head>
+<body>
+<form onsubmit="validationForm()" name="loginform">
+ <center><div class="form-container">
+  <span>Username:</span> <input type="text" name="name" placeholder="Username..." id="uname"/><br/>
+  <span>Password:</span> <input type="password" name="pass" placeholder="Password..." id="passwd"/><br/> 
+  <input class="submitButton" type="submit" value="Login"/>
+ </div></center>
+</form>
+</body>
+</html>
